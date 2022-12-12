@@ -1,3 +1,7 @@
+"""
+10번째 sorted 안쓰고 할 수는 없나?
+"""
+
 from collections import Counter
 
 def solution(user_id, banned_id):
