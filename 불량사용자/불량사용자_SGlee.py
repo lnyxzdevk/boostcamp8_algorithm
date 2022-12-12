@@ -5,7 +5,7 @@
 from collections import Counter
 
 def solution(user_id, banned_id):
-    def dps(depth, id_candidate, stack, answer_list, flag_set):
+    def dfs(depth, id_candidate, stack, answer_list, flag_set):
         if depth == len(banned_id):
             answer_list.append(tuple(sorted(stack)))
             return 
@@ -29,6 +29,6 @@ def solution(user_id, banned_id):
         id_candidate.append(candiate)
 
     answer_list = []
-    dps(0, id_candidate, [], answer_list, set())
+    dfs(0, id_candidate, [], answer_list, set())
     
     return len(set(answer_list))
