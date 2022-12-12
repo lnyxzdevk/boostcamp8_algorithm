@@ -13,7 +13,7 @@ def solution(user_id, banned_id):
             if c_id not in flag_set:
                 stack.append(c_id)
                 flag_set.add(c_id)
-                dps(depth + 1, id_candidate, stack, answer_list, flag_set)
+                dfs(depth + 1, id_candidate, stack, answer_list, flag_set)
                 stack.pop()
                 flag_set.remove(c_id)
 
