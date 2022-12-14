@@ -16,6 +16,7 @@ class Solution:
                     visited[x][y] = True
                     dfs(x, y, num + 1, visited)
                     visited[x][y] = False
+                    
         num = 0
         w, h = len(board[0]), len(board)
 
@@ -23,9 +24,7 @@ class Solution:
         dy = [-1, 1, 0 ,0]
 
         visited = [[False for _ in range(w)] for _ in range(h)]
-
         
-
         for i in range(h):
             for j in range(w):
                 if board[i][j] == word[0]:
