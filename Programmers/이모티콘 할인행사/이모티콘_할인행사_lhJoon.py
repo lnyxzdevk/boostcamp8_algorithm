@@ -2,15 +2,15 @@ def solution(users, emoticons):
     discount = [10 ,20, 30, 40]
     dis_list = []
     def dfs(tmp, depth):
-        if depth == len(tmp):
+        if depth == len(emoticons):
             dis_list.append(tmp[:])
             return
         for d in discount:
-            tmp[depth] += d
+            tmp.append(d)
             dfs(tmp, depth + 1)
-            tmp[depth] -= d
+            tmp.pop()
     
-    dfs([0 for i in range(len(emoticons))], 0)
+    dfs([], 0)
     """
     dfs(0,0) -> tmp =[10,0...] -> tmp[10,10...10] -> tmp[10,10...0] ->tmp[10,...20] -> 10,,,30 -> 10,,,40 -> 10,,,,20,20 -> 30
     """
